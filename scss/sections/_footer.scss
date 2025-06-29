@@ -1,0 +1,119 @@
+@use '../base/colors' as *;
+
+.footer {
+  background-color: $gray;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 2.4rem;
+    padding: 1.6rem 0;
+    font-size: 1.3rem;
+
+    @media (min-width: 992px) {
+      padding: 3.2rem 0;
+    }
+
+    @media (min-width: 1120px) {
+      flex-direction: row;
+    }
+  }
+
+  &__copyright {
+    color: $white;
+  }
+
+  &__payments {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(1.6rem, 3vw, 3.8rem);
+    padding: 0;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+
+    @media (min-width: 1120px) {
+      padding: 0 4rem;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        height: 1.8rem;
+        width: 0.1rem;
+        background-color: $light-gray;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  &__payment {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $light-gray;
+
+    img {
+      width: auto;
+      height: 2rem;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.6rem, 3vw, 3.8rem);
+
+    .icon {
+      position: relative;
+      padding-left: 3.2rem;
+      color: $white;
+      white-space: nowrap;
+      transition: all 0.2s ease-in-out;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    .email::before {
+      background-image: url('../../img/icons/email.svg');
+    }
+
+    .vk::before {
+      background-image: url('../../img/icons/vk.svg');
+    }
+  }
+}

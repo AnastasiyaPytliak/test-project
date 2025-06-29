@@ -1,0 +1,127 @@
+@use '../base/colors' as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: $bg-dark;
+  transform: translateY(-100%);
+  opacity: 0;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.6rem;
+    padding: 1.6rem 0;
+
+    @media (min-width: 992px) {
+      padding: 3.2rem 0;
+    }
+  }
+
+  &__logo img {
+    width: auto;
+    max-height: 3.5rem;
+  }
+
+  .menu-toggle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 3rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 10;
+    cursor: pointer;
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+
+    span {
+      position: relative;
+      width: 3rem;
+      height: 0.3rem;
+      background-color: $white;
+      border-radius: 0.2rem;
+      transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+    }
+
+    &.active {
+      span {
+        &:nth-child(1) {
+          position: absolute;
+          top: 0.8rem;
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          position: absolute;
+          top: 0.8rem;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    background-color: $bg-dark;
+    overflow: hidden;
+    transition:
+      max-height 0.4s ease-in-out,
+      padding 0.4s ease-in-out;
+    -webkit-transition:
+      max-height 0.4s ease-in-out,
+      padding 0.4s ease-in-out;
+
+    &.active {
+      max-height: 50rem;
+      padding: 1.6rem 0 3.2rem;
+    }
+
+    @media (min-width:992px) {
+      position: static;
+      width: auto;
+      padding: 0;
+      all: unset;
+    }
+  }
+
+  .menu__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: clamp(2rem, 5vw, 6rem);
+
+    @media (min-width:992px) {
+      flex-direction: row;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: $white;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+    }
+
+    a:hover {
+      color: $blue;
+    }
+  }
+}
