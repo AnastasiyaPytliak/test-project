@@ -8,8 +8,9 @@ const menuLinks = menu.querySelectorAll('a')
 const rangeInput = document.getElementById('range');
 const rangeValue = document.getElementById('rangeValue');
 const select = document.querySelector('#payments');
+const inputAttach = document.querySelectorAll('.input-file input[type="file"]')
 
-// animation
+// Animation
 document.addEventListener("DOMContentLoaded", () => {
   animateHeader();
   animateHero();
@@ -44,15 +45,14 @@ function closeMenu() {
 }
 
 handleMenuToggle();
-
 window.addEventListener('resize', handleMenuToggle);
 
-// range
+// Range
 rangeInput.addEventListener('input', () => {
   rangeValue.textContent = `${rangeInput.value}%`;
 });
 
-// services
+// Services
 const choices = new Choices(select, {
   searchEnabled: false,
   itemSelectText: '',
@@ -61,5 +61,17 @@ const choices = new Choices(select, {
   }
 });
 
-//year
+// Attachment
+inputAttach.forEach(input => {
+  input.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      const label = this.nextElementSibling;
+      label.textContent = file.name;
+    }
+  });
+});
+
+// Year
 document.querySelector('.year').textContent = new Date().getFullYear();
+

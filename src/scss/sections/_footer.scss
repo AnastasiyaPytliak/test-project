@@ -17,7 +17,7 @@
       padding: 3.2rem 0;
     }
 
-    @media (min-width: 1120px) {
+    @media (min-width: 1200px) {
       flex-direction: row;
     }
   }
@@ -43,7 +43,7 @@
       flex-direction: row;
     }
 
-    @media (min-width: 1120px) {
+    @media (min-width: 1200px) {
       padding: 0 4rem;
 
       &::before,
@@ -109,11 +109,11 @@
     }
 
     .email::before {
-      background-image: url('../../img/icons/email.svg');
+      background-image: url('../../assets/img/icons/email.svg');
     }
 
     .vk::before {
-      background-image: url('../../img/icons/vk.svg');
+      background-image: url('../../assets/img/icons/vk.svg');
     }
   }
 }

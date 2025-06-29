@@ -109,9 +109,6 @@
         border: 1px solid $gray;
         border-radius: 0 0 3px 3px;
         padding-right: 4px;
-        // firefox
-        scrollbar-width: thin;
-        scrollbar-color: $blue$gray;
 
         &::before {
           content: '';
@@ -123,10 +120,18 @@
         }
       }
 
+      @-moz-document url-prefix() {
+        .custom-select+.choices__list--dropdown {
+          scrollbar-width: thin;
+          scrollbar-color: $blue $gray;
+        }
+      }
+
       .custom-select+.choices__list--dropdown .choices__list {
         max-height: 20rem;
         overflow-y: auto;
         position: relative;
+        border-radius: 0 0 3px 3px;
         z-index: 2;
 
 

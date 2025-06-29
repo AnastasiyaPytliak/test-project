@@ -38,10 +38,10 @@ export function animateOrder() {
         }
       });
       orderTl
-        .from(".order__title", { y: 50, opacity: 0, duration: 0.4, ease: "power3.out" })
-        .from(".order__sub", { y: 50, opacity: 0, duration: 0.4, ease: "power3.out" }, ">0.2")
-        .from(".order__steps", { y: 50, opacity: 0, duration: 0.4, ease: "power3.out" }, ">0.2")
-        .from(".order__form", { y: 50, opacity: 0, duration: 0.4, ease: "power3.out" }, ">0.2");
+        .from(".order__title", { y: 50, opacity: 0, duration: 0.3, ease: "power3.out" })
+        .from(".order__sub", { y: 50, opacity: 0, duration: 0.3, ease: "power3.out" }, ">0.2")
+        .from(".order__steps", { y: 50, opacity: 0, duration: 0.3, ease: "power3.out" }, ">0.2")
+        .from(".order__form", { y: 50, opacity: 0, duration: 0.3, ease: "power3.out" }, ">0.2");
     },
   });
 }
